@@ -3,36 +3,47 @@
     android:layout_height="match_parent"
     android:padding="16dp"
     android:orientation="vertical"
-    android:background="#FAF3FF">
+    android:background="#F5F5F5">
 
-    <!-- Dòng ngày chọn -->
+    <!-- Tiêu đề "Chọn ngày" -->z
     <TextView
-        android:text="Chọn ngày"
-        android:textSize="18sp"
+        android:text="📅 Chọn ngày"
+        android:textSize="20sp"
         android:textStyle="bold"
+        android:textColor="#333333"
         android:layout_marginBottom="8dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
 
+    <!-- RecyclerView chọn ngày -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerNgay"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:orientation="horizontal"/>
+        android:layout_height="60dp"
+        android:background="@drawable/bg_card"
+        android:clipToPadding="false"
+        android:padding="4dp"
+        android:overScrollMode="never" />
 
-    <!-- Dòng suất chiếu -->
+    <!-- Tiêu đề "Chọn suất chiếu" -->
     <TextView
-        android:text="Chọn suất chiếu"
-        android:textSize="18sp"
+        android:text="🕒 Chọn suất chiếu"
+        android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_marginTop="16dp"
+        android:textColor="#333333"
+        android:layout_marginTop="20dp"
         android:layout_marginBottom="8dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
 
+    <!-- RecyclerView suất chiếu -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerSuat"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"/>
+        android:layout_weight="1"
+        android:background="@drawable/bg_card"
+        android:padding="8dp"
+        android:clipToPadding="false"
+        android:overScrollMode="never" />
 </LinearLayout>

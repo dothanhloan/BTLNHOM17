@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <!-- Trailer (VideoView) -->
+        <VideoView
+            android:id="@+id/videoTrailer"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Poster phim -->
+        <ImageView
+            android:id="@+id/imgPoster"
+            android:layout_width="120dp"
+            android:layout_height="160dp"
+            android:scaleType="centerCrop"
+            android:layout_gravity="center" />
+
+        <!-- Thông tin phim -->
+        <TextView
+            android:id="@+id/txtTenPhim"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="MAI"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp" />
+
+        <TextView
+            android:id="@+id/txtThongTinPhim"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Thời lượng: 100 phút\nKhởi chiếu: 25/06/2024\nThể loại: Hài | Kịch\nLoại: 2D | Normal | Normal Sound\nXếp hạng: ⭐ 9.6"
+            android:textSize="14sp"
+            android:layout_marginTop="8dp" />
+
+        <!-- Mô tả phim -->
+        <TextView
+            android:id="@+id/txtMoTaPhim"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tour Thám Hiểm Sơn Đoòng 2024 đã hết chỗ..."
+            android:textSize="14sp"
+            android:layout_marginTop="12dp"
+            android:textColor="#444444" />
+
+        <!-- Nút Đặt vé -->
+        <Button
+            android:id="@+id/btnDatVe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Đặt vé"
+            android:textSize="16sp"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#C0392B"
+            android:layout_marginTop="20dp" />
+    </LinearLayout>
+</ScrollView>

@@ -1,6 +1,8 @@
 package vn.edu.tlu.dothithanhloan.btlnhom17;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -34,6 +36,12 @@ public class ChonGheActivity extends AppCompatActivity implements GheAdapter.OnG
 
         recyclerGhe.setLayoutManager(new GridLayoutManager(this, 8));
         recyclerGhe.setAdapter(new GheAdapter(danhSachGhe, this));
+        Button btnTiep = findViewById(R.id.btnTiep);
+        btnTiep.setOnClickListener(v -> {
+            Intent intent = new Intent(ChonGheActivity.this, ChonBapNuocActivity.class);
+            startActivity(intent);
+        });
+
     }
 
     @Override

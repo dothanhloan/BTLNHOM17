@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFF"
+    android:orientation="horizontal"
+    android:padding="10dp"
+    android:layout_marginBottom="8dp"
+    android:gravity="center_vertical"
+    android:elevation="2dp">
+
+    <!-- Ảnh minh hoạ món -->
+    <ImageView
+        android:id="@+id/imgMon"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/pepsi"
+        android:scaleType="centerCrop"
+        android:layout_marginEnd="10dp" />
+
+    <!-- Tên món + giá + nút tăng giảm -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtTenMon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tên món"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtGiaMon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="30000 đ"
+            android:textSize="14sp"
+            android:textColor="#666666"
+            android:layout_marginTop="2dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="6dp"
+            android:gravity="center_vertical">
+
+            <Button
+                android:id="@+id/btnTru"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="-" />
+
+            <TextView
+                android:id="@+id/txtSoLuong"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="0"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:textColor="#000000" />
+
+            <Button
+                android:id="@+id/btnCong"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="+" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

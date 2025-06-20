@@ -26,10 +26,12 @@
         android:textSize="14sp"/>
 
     <Button
+        android:id="@+id/btnTiep"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Tiếp theo"
         android:layout_marginTop="12dp"
         android:backgroundTint="@color/orange"
         android:textColor="@android:color/white"/>
+
 </LinearLayout>

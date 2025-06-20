@@ -16,6 +16,8 @@
         <activity android:name=".ChonSuatActivity"/>
 
         <activity android:name=".ChonGheActivity" />
+        <activity android:name=".ChonBapNuocActivity"/>
+        <activity android:name=".MovieDetailActivity" />
 
         <activity
             android:name=".MainActivity"

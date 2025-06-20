@@ -1,0 +1,77 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#FFF7F0">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- BẮP RANG -->
+        <TextView
+            android:text="Chọn bắp rang"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!-- Bắp Caramel -->
+        <include layout="@layout/item_mon"
+            android:id="@+id/monBapCaramel"/>
+
+        <!-- Bắp Phô mai -->
+        <include layout="@layout/item_mon"
+            android:id="@+id/monBapPhoMai"/>
+
+        <!-- NƯỚC -->
+        <TextView
+            android:text="Chọn nước"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!-- Pepsi -->
+        <include layout="@layout/item_mon"
+            android:id="@+id/monPepsi" />
+
+        <!-- Combo -->
+        <TextView
+            android:text="Chọn combo"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!-- Combo Bắp + Pepsi -->
+        <include layout="@layout/item_mon"
+            android:id="@+id/monCombo" />
+
+        <!-- Tổng tiền -->
+        <TextView
+            android:id="@+id/txtTongTien"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tổng tiền: 0đ"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="24dp"/>
+        <Button
+            android:id="@+id/btnHoanThanh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hoàn thành"
+            android:textSize="18sp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#FFB300"
+            android:textColor="#FFFFFF"
+            android:padding="12dp"/>
+    </LinearLayout>
+</ScrollView>

@@ -4,7 +4,10 @@
     android:orientation="horizontal"
     android:padding="8dp"
     android:background="@android:color/white"
-    android:layout_marginBottom="8dp">
+    android:layout_marginBottom="8dp"
+    android:clickable="true"
+    android:focusable="true"
+    >
 
     <ImageView
         android:id="@+id/imgPoster"
@@ -48,6 +51,8 @@
             android:layout_marginTop="4dp"/>
 
         <Button
+            android:focusable="false"
+            android:focusableInTouchMode="false"
             android:id="@+id/btnDatVe"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
