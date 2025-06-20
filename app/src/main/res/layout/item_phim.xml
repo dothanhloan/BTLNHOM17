@@ -1,0 +1,59 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp"
+    android:background="@android:color/white"
+    android:layout_marginBottom="8dp">
+
+    <ImageView
+        android:id="@+id/imgPoster"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/phim_thamtukien" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_marginStart="8dp">
+
+        <TextView
+            android:id="@+id/txtLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="T16"
+            android:background="@android:color/holo_blue_dark"
+            android:textColor="@android:color/white"
+            android:padding="4dp"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/txtTenPhim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="KING KONG X GODZILLA"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginTop="4dp"/>
+
+        <TextView
+            android:id="@+id/txtThongTin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thời lượng: 167 phút\nKhởi chiếu: 26/07/2024\nThể loại:"
+            android:textSize="13sp"
+            android:layout_marginTop="4dp"/>
+
+        <Button
+            android:id="@+id/btnDatVe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đặt vé"
+            android:textColor="@android:color/white"
+            android:backgroundTint="@color/orange"
+            android:layout_marginTop="8dp"/>
+    </LinearLayout>
+</LinearLayout>
