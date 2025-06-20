@@ -1,5 +1,7 @@
 package vn.edu.tlu.dothithanhloan.btlnhom17;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,9 +16,12 @@ import java.util.List;
 
 public class PhimDocAdapter extends RecyclerView.Adapter<PhimDocAdapter.PhimViewHolder> {
 
+    private Context context;
     private List<Phim> phimList;
 
-    public PhimDocAdapter(List<Phim> phimList) {
+    // Constructor truyền context để sử dụng Intent
+    public PhimDocAdapter(Context context, List<Phim> phimList) {
+        this.context = context;
         this.phimList = phimList;
     }
 
@@ -35,6 +40,15 @@ public class PhimDocAdapter extends RecyclerView.Adapter<PhimDocAdapter.PhimView
         holder.txtTenPhim.setText(phim.tenPhim);
         holder.txtThongTin.setText("Thời lượng: " + phim.thoiLuong + " phút\nKhởi chiếu: " + phim.ngayKhoiChieu + "\nThể loại: " + phim.theLoai);
         holder.btnDatVe.setText("Đặt vé");
+
+        // ✅ Xử lý nút "Đặt vé"
+        holder.btnDatVe.setOnClickListener(v -> {
+            Intent intent = new Intent(context, ChonSuatActivity.class);
+            intent.putExtra("tenPhim", phim.tenPhim);
+            intent.putExtra("ngayChieu", phim.ngayKhoiChieu);
+            context.startActivity(intent);
+        });
+
     }
 
     @Override

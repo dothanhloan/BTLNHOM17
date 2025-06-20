@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         danhSachPhim.add(new Phim(R.drawable.phim_thamtukien, "KING KONG X GODZILLA", "167", "26/07/2024", "Hành động"));
         danhSachPhim.add(new Phim(R.drawable.phim_thamtukien, "KHOA HỌC", "100", "27/06/2024", "Khoa học viễn tưởng"));
 
-        PhimDocAdapter adapter = new PhimDocAdapter(danhSachPhim);
+        PhimDocAdapter adapter = new PhimDocAdapter(this, danhSachPhim);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
     }

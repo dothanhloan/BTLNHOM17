@@ -1,0 +1,10 @@
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/txtSuat"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_suat"
+    android:padding="12dp"
+    android:text="07:50"
+    android:textColor="#FFFFFF"
+    android:textSize="16sp"
+    android:layout_marginBottom="8dp"/>
