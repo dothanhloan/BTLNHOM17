@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <!-- Chọn ngày -->
         <TextView
             android:text="Chọn ngày"
             android:textStyle="bold"
@@ -23,6 +24,7 @@
             android:layout_height="60dp"
             android:layout_marginTop="8dp" />
 
+        <!-- Chọn rạp -->
         <TextView
             android:text="Chọn rạp"
             android:textStyle="bold"
@@ -33,6 +35,37 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerRap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp" />
+
+        <!-- Đề xuất suất chiếu -->
+        <TextView
+            android:text="Đề xuất suất chiếu"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:id="@+id/layoutDeXuat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="8dp" />
+
+        <!-- ✅ Nếu bạn cần recyclerSuat -->
+        <TextView
+            android:text="Chọn suất chiếu"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerSuat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp" />

@@ -15,7 +15,14 @@
         android:text="Tên rạp"
         android:textStyle="bold"
         android:textSize="16sp" />
-
+    <TextView
+        android:id="@+id/txtSuatChieu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10:00   13:00   18:30   21:45"
+        android:textSize="14sp"
+        android:textColor="#333333"
+        android:layout_marginBottom="8dp" />
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="wrap_content"
