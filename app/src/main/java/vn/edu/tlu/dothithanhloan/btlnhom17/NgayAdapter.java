@@ -22,6 +22,7 @@ public class NgayAdapter extends RecyclerView.Adapter<NgayAdapter.NgayViewHolder
     @NonNull
     @Override
     public NgayViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+
         View view = LayoutInflater.from(parent.getContext()).inflate(android.R.layout.simple_list_item_1, parent, false);
         return new NgayViewHolder(view);
     }

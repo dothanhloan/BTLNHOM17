@@ -21,8 +21,11 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerNgay"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginTop="8dp" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:nestedScrollingEnabled="false"
+            android:overScrollMode="never"
+            android:scrollbars="none" />
 
         <!-- Chọn rạp -->
         <TextView
@@ -37,7 +40,8 @@
             android:id="@+id/recyclerRap"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp" />
+            android:layout_marginTop="8dp"
+            />
 
         <!-- Đề xuất suất chiếu -->
         <TextView
@@ -55,7 +59,7 @@
             android:orientation="vertical"
             android:layout_marginTop="8dp" />
 
-        <!-- ✅ Nếu bạn cần recyclerSuat -->
+        <!-- Chọn suất chiếu -->
         <TextView
             android:text="Chọn suất chiếu"
             android:textStyle="bold"
@@ -68,7 +72,8 @@
             android:id="@+id/recyclerSuat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp" />
+            android:layout_marginTop="8dp"
+            android:nestedScrollingEnabled="false" />
 
     </LinearLayout>
 </ScrollView>

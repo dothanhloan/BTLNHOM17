@@ -36,7 +36,7 @@
             android:text="10:00"
             android:textSize="12sp"
             android:layout_marginEnd="8dp"
-            android:backgroundTint="#E0E0E0" />
+            android:backgroundTint="#FFCC80" />
 
         <Button
             android:id="@+id/btnSuat2"
@@ -45,7 +45,7 @@
             android:text="13:00"
             android:textSize="12sp"
             android:layout_marginEnd="8dp"
-            android:backgroundTint="#E0E0E0" />
+            android:backgroundTint="#FFCC80" />
 
         <Button
             android:id="@+id/btnSuat3"
@@ -53,6 +53,6 @@
             android:layout_height="wrap_content"
             android:text="18:30"
             android:textSize="12sp"
-            android:backgroundTint="#E0E0E0" />
+            android:backgroundTint="#FFCC80" />
     </LinearLayout>
 </LinearLayout>

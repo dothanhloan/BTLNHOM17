@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
         List<Phim> danhSachPhim = new ArrayList<>();
         danhSachPhim.add(new Phim(R.drawable.phim_godzilla, "Godzilla x Kong: The New Empire", "115", "26/07/2024", "Hành động"));
-        danhSachPhim.add(new Phim(R.drawable.phim_doraemon, "Doraemon: Nobita và Vùng đất lý tưởng", "107", "20/06/2024", "Hoạt hình"));
+        danhSachPhim.add(new Phim(R.drawable.phim_doraemon, "Doraemon", "107", "20/06/2024", "Hoạt hình"));
         danhSachPhim.add(new Phim(R.drawable.phim_batman, "The Batman", "176", "15/07/2024", "Hành động, Hình sự"));
         danhSachPhim.add(new Phim(R.drawable.phim_marvels, "The Marvels", "105", "10/08/2024", "Siêu anh hùng"));
         danhSachPhim.add(new Phim(R.drawable.phim_meg2, "The Meg 2: The Trench", "116", "12/06/2024", "Kinh dị"));

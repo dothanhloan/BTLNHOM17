@@ -1,5 +1,6 @@
 package vn.edu.tlu.dothithanhloan.btlnhom17;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -45,14 +46,33 @@ public class ChonRapSuatActivity extends AppCompatActivity {
     }
 
     private void themRapDeXuat(Rap rap) {
-        // Mỗi khi chọn rạp → thêm 1 block vào danh sách đề xuất
+        // Inflate layout
         View view = LayoutInflater.from(this).inflate(R.layout.item_rap_dexuat, layoutDeXuat, false);
-        TextView txtTen = view.findViewById(R.id.txtTenRap);
-        TextView txtSuat = view.findViewById(R.id.txtSuatChieu);
 
+        TextView txtTen = view.findViewById(R.id.txtTenRap);
         txtTen.setText(rap.getTen());
+
+        // Lấy các nút suất chiếu
+        TextView txtSuat = view.findViewById(R.id.txtSuatChieu);
         txtSuat.setText("10:00   13:00   18:30   21:45");
+
+        // ✅ Lấy các button suất
+        View.OnClickListener suatClickListener = v -> {
+            String gioChieu = ((TextView) v).getText().toString();
+            Intent intent = new Intent(ChonRapSuatActivity.this, ChonGheActivity.class);
+            intent.putExtra("rap", rap.getTen());
+            intent.putExtra("suat", gioChieu);
+            startActivity(intent);
+        };
+
+        // ✅ Gán sự kiện cho các nút suất
+        view.findViewById(R.id.btnSuat1).setOnClickListener(suatClickListener);
+        view.findViewById(R.id.btnSuat2).setOnClickListener(suatClickListener);
+        view.findViewById(R.id.btnSuat3).setOnClickListener(suatClickListener);
+
+        // Thêm vào layout
         layoutDeXuat.addView(view);
     }
+
 }
 
