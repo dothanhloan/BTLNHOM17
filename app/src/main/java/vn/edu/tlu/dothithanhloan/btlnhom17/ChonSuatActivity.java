@@ -19,13 +19,13 @@ public class ChonSuatActivity extends AppCompatActivity {
         RecyclerView recyclerNgay = findViewById(R.id.recyclerNgay);
         RecyclerView recyclerSuat = findViewById(R.id.recyclerSuat);
 
-        // Danh sách ngày mẫu
-        List<String> ngayList = Arrays.asList("Tue 25", "Wed 26", "Thu 27", "Fri 28", "Sat 29", "Sun 30");
+        // Ngày chiếu mẫu
+        List<String> ngayList = Arrays.asList("22/06", "23/06", "24/06", "25/06");
         recyclerNgay.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         recyclerNgay.setAdapter(new NgayAdapter(ngayList));
 
-        // Danh sách suất mẫu
-        List<String> suatList = Arrays.asList("07:50", "09:00", "11:30", "14:15", "16:45", "19:00", "21:15");
+        // Suất chiếu mẫu
+        List<String> suatList = Arrays.asList("10:00", "13:00", "15:30", "18:00", "20:30");
         recyclerSuat.setLayoutManager(new LinearLayoutManager(this));
         recyclerSuat.setAdapter(new SuatAdapter(suatList, suat -> {
             Intent intent = new Intent(ChonSuatActivity.this, ChonGheActivity.class);
@@ -34,3 +34,4 @@ public class ChonSuatActivity extends AppCompatActivity {
         }));
     }
 }
+

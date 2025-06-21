@@ -25,7 +25,7 @@
 
         <activity android:name=".DatVeActivity" />
         <activity android:name=".ChonSuatActivity"/>
-
+        <activity android:name=".ChonRapSuatActivity"/>
         <activity android:name=".ChonGheActivity" />
         <activity android:name=".ChonBapNuocActivity"/>
         <activity android:name=".MovieDetailActivity" />

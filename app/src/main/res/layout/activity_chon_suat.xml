@@ -1,49 +1,41 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    android:orientation="vertical"
     android:background="#F5F5F5">
 
-    <!-- Tiêu đề "Chọn ngày" -->z
-    <TextView
-        android:text="📅 Chọn ngày"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:textColor="#333333"
-        android:layout_marginBottom="8dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <!-- RecyclerView chọn ngày -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerNgay"
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="@drawable/bg_card"
-        android:clipToPadding="false"
-        android:padding="4dp"
-        android:overScrollMode="never" />
+        android:layout_height="wrap_content">
 
-    <!-- Tiêu đề "Chọn suất chiếu" -->
-    <TextView
-        android:text="🕒 Chọn suất chiếu"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:textColor="#333333"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="8dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <TextView
+            android:text="Chọn ngày"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
-    <!-- RecyclerView suất chiếu -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerSuat"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="@drawable/bg_card"
-        android:padding="8dp"
-        android:clipToPadding="false"
-        android:overScrollMode="never" />
-</LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerNgay"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:text="Chọn rạp"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerRap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp" />
+
+    </LinearLayout>
+</ScrollView>

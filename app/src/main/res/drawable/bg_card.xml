@@ -1,6 +1,15 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
-    <solid android:color="#FFFFFF"/>
-    <corners android:radius="12dp"/>
-    <elevation android:height="4dp"/>
+
+    <!-- Màu nền -->
+    <solid android:color="#FFFFFF" />
+
+    <!-- Bo góc -->
+    <corners android:radius="8dp" />
+
+    <!-- Viền đen rõ nét -->
+    <stroke
+        android:width="2dp"
+        android:color="#000000" />
 </shape>
+

@@ -43,7 +43,7 @@ public class PhimDocAdapter extends RecyclerView.Adapter<PhimDocAdapter.PhimView
 
         // ✅ Xử lý nút "Đặt vé"
         holder.btnDatVe.setOnClickListener(v -> {
-            Intent intent = new Intent(context, ChonSuatActivity.class);
+            Intent intent = new Intent(context,ChonRapSuatActivity.class);
             intent.putExtra("tenPhim", phim.tenPhim);
             intent.putExtra("ngayChieu", phim.ngayKhoiChieu);
             context.startActivity(intent);
