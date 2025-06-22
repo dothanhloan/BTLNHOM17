@@ -3,9 +3,9 @@ package vn.edu.tlu.dothithanhloan.btlnhom17;
 public class Rap {
     private int logoResId;
     private String ten;
-    private String gia;
+    private int gia; // ✅ sửa từ String → int
 
-    public Rap(int logoResId, String ten, String gia) {
+    public Rap(int logoResId, String ten, int gia) {
         this.logoResId = logoResId;
         this.ten = ten;
         this.gia = gia;
@@ -19,7 +19,7 @@ public class Rap {
         return ten;
     }
 
-    public String getGia() {
+    public int getGiaVe() {
         return gia;
     }
 }

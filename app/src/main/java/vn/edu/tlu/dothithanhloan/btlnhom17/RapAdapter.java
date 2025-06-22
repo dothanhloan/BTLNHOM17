@@ -37,10 +37,11 @@ public class RapAdapter extends RecyclerView.Adapter<RapAdapter.RapViewHolder> {
         Rap rap = rapList.get(position);
         holder.imgLogo.setImageResource(rap.getLogoResId());
         holder.txtTen.setText(rap.getTen());
-        holder.txtGia.setText(rap.getGia());
+        holder.txtGia.setText(rap.getGiaVe() + "đ"); // ✅ ĐÃ SỬA Ở ĐÂY
 
         holder.itemView.setOnClickListener(v -> listener.onRapClick(rap));
     }
+
 
     @Override
     public int getItemCount() {

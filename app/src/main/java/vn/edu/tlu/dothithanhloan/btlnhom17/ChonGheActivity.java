@@ -17,10 +17,11 @@ public class ChonGheActivity extends AppCompatActivity implements GheAdapter.OnG
 
     TextView txtTongTien, txtGheChon;
     List<String> gheDaChon = new ArrayList<>();
-    final int GIA_VE = 80000;
-
+    int GIA_VE;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        GIA_VE = getIntent().getIntExtra("giaVe", 80000); // Lấy từ Intent, mặc định 80k nếu không có
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chon_ghe);
 
@@ -49,6 +50,9 @@ public class ChonGheActivity extends AppCompatActivity implements GheAdapter.OnG
                 // Truyền sang ChonBapNuocActivity
                 Intent intent = new Intent(ChonGheActivity.this, ChonBapNuocActivity.class);
                 intent.putExtra("seatCost", seatCost); // ✅ truyền tổng tiền ghế
+                intent.putExtra("rap", getIntent().getStringExtra("rap"));
+                intent.putExtra("suat", getIntent().getStringExtra("suat"));
+
                 startActivity(intent);
             }
         });

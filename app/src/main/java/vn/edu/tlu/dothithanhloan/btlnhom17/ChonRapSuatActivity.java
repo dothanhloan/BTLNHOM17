@@ -43,10 +43,10 @@ public class ChonRapSuatActivity extends AppCompatActivity {
 
         // Danh sách rạp
         List<Rap> rapList = Arrays.asList(
-                new Rap(R.drawable.ic_cgv, "CGV", "84k"),
-                new Rap(R.drawable.ic_lotte, "Lotte Cinema", "65k"),
-                new Rap(R.drawable.ic_beta, "Beta Cinemas", "56k"),
-                new Rap(R.drawable.ic_bhd, "BHD Star", "Free")
+                new Rap(R.drawable.ic_cgv, "CGV", 84000),
+                new Rap(R.drawable.ic_lotte, "Lotte Cinema", 65000),
+                new Rap(R.drawable.ic_beta, "Beta Cinemas", 56000),
+                new Rap(R.drawable.ic_bhd, "BHD Star", 70000)
         );
         recyclerRap.setLayoutManager(new GridLayoutManager(this, 2));
         recyclerRap.setAdapter(new RapAdapter(rapList, this::themRapDeXuat));
@@ -71,6 +71,7 @@ public class ChonRapSuatActivity extends AppCompatActivity {
             Intent intent = new Intent(ChonRapSuatActivity.this, ChonGheActivity.class);
             intent.putExtra("rap", rap.getTen());
             intent.putExtra("suat", gioChieu);
+            intent.putExtra("giaVe", rap.getGiaVe());
             startActivity(intent);
         };
 

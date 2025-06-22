@@ -44,10 +44,10 @@ public class MainActivity extends AppCompatActivity {
         danhSachPhim.add(new Phim(R.drawable.phim_avatar2, "Avatar: The Way of Water", "192", "28/06/2024", "Viễn tưởng, Phiêu lưu"));
 
         List<Rap> rapList = Arrays.asList(
-                new Rap(R.drawable.ic_cgv, "CGV Vincom", "84k"),
-                new Rap(R.drawable.ic_lotte, "Lotte Landmark", "75k"),
-                new Rap(R.drawable.ic_beta, "Beta Mỹ Đình", "60k"),
-                new Rap(R.drawable.ic_bhd, "BHD Star Bitexco", "90k")
+                new Rap(R.drawable.ic_cgv, "CGV Vincom", 84000),
+                new Rap(R.drawable.ic_lotte, "Lotte Landmark", 75000),
+                new Rap(R.drawable.ic_beta, "Beta Mỹ Đình", 60000),
+                new Rap(R.drawable.ic_bhd, "BHD Star Bitexco", 90000)
         );
 
 
