@@ -41,16 +41,24 @@ public class ComingSoonAdapter extends RecyclerView.Adapter<ComingSoonAdapter.Vi
     @Override
     public void onBindViewHolder(@NonNull ViewHolder h, int pos) {
         Phim phim = phimList.get(pos);
-        h.imgPoster.setImageResource(phim.posterResId);
-        h.txtTenPhim.setText(phim.tenPhim);
-        h.txtNgayKhoiChieu.setText("Khởi chiếu: " + phim.ngayKhoiChieu);
+        h.imgPoster.setImageResource(phim.getHinhAnh());
+        h.txtTenPhim.setText(phim.getTen());
+        h.txtNgayKhoiChieu.setText("Khởi chiếu: " + phim.getKhoiChieu());
 
         h.btnXem.setOnClickListener(v -> {
-            if (listener != null) listener.onViewClick(phim);
-            // hoặc khởi động activity detail:
-            Intent intent = new Intent(context, MovieDetailActivity.class);
-            intent.putExtra("tenPhim", phim.tenPhim);
-            context.startActivity(intent);
+            if (listener != null) {
+                listener.onViewClick(phim);
+            } else {
+                // Nếu không truyền listener thì mở MovieDetailActivity trực tiếp
+                Intent intent = new Intent(context, MovieDetailActivity.class);
+                intent.putExtra("tenPhim", phim.getTen());
+                intent.putExtra("thongTin", "Thời lượng: " + phim.getThoiLuong()
+                        + "\nKhởi chiếu: " + phim.getKhoiChieu()
+                        + "\nThể loại: " + phim.getTheLoai());
+                intent.putExtra("moTa", phim.getMoTa() != null ? phim.getMoTa() : "Chưa có mô tả.");
+                intent.putExtra("poster", phim.getHinhAnh());
+                context.startActivity(intent);
+            }
         });
     }
 

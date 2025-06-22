@@ -34,6 +34,8 @@ android {
 dependencies {
 
     implementation(libs.appcompat)
+    implementation("com.pierfrancescosoffritti.androidyoutubeplayer:core:12.1.0")
+
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)

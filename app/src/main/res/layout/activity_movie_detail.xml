@@ -2,67 +2,101 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF">
+    android:background="#FAFAFA">
 
     <LinearLayout
-        android:orientation="vertical"
-        android:padding="16dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
 
+        <!-- Nút quay lại -->
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_back"
+            android:layout_gravity="start"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="8dp"
+            android:contentDescription="Back" />
 
-        <!-- Trailer (VideoView) -->
-        <VideoView
-            android:id="@+id/videoTrailer"
+        <!-- Trailer YouTube -->
+        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+            android:id="@+id/youtubePlayerView"
             android:layout_width="match_parent"
             android:layout_height="200dp"
+            android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp" />
 
-        <!-- Poster phim -->
-        <ImageView
-            android:id="@+id/imgPoster"
-            android:layout_width="120dp"
-            android:layout_height="160dp"
-            android:scaleType="centerCrop"
-            android:layout_gravity="center" />
-
-        <!-- Thông tin phim -->
-        <TextView
-            android:id="@+id/txtTenPhim"
+        <!-- Card Poster + Thông tin -->
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="MAI"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_marginTop="12dp" />
+            android:layout_marginBottom="16dp"
+            android:background="#FFFFFF">
 
-        <TextView
-            android:id="@+id/txtThongTinPhim"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Thời lượng: 100 phút\nKhởi chiếu: 25/06/2024\nThể loại: Hài | Kịch\nLoại: 2D | Normal | Normal Sound\nXếp hạng: ⭐ 9.6"
-            android:textSize="14sp"
-            android:layout_marginTop="8dp" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-        <!-- Mô tả phim -->
-        <TextView
-            android:id="@+id/txtMoTaPhim"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Tour Thám Hiểm Sơn Đoòng 2024 đã hết chỗ..."
-            android:textSize="14sp"
-            android:layout_marginTop="12dp"
-            android:textColor="#444444" />
+                <!-- Poster phim -->
+                <ImageView
+                    android:id="@+id/imgPoster"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:scaleType="centerCrop"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="12dp" />
 
-        <!-- Nút Đặt vé -->
+                <!-- Tên phim -->
+                <TextView
+                    android:id="@+id/txtTenPhim"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tên phim"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:gravity="center"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- Thông tin phim -->
+                <TextView
+                    android:id="@+id/txtThongTinPhim"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Thời lượng, Thể loại, Ngày chiếu..."
+                    android:textSize="15sp"
+                    android:textColor="#555555"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- Mô tả phim -->
+                <TextView
+                    android:id="@+id/txtMoTaPhim"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Mô tả phim..."
+                    android:textSize="15sp"
+                    android:textColor="#444444"
+                    android:lineSpacingExtra="4dp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Nút đặt vé -->
         <Button
             android:id="@+id/btnDatVe"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Đặt vé"
-            android:textSize="16sp"
+            android:text="🎟 ĐẶT VÉ NGAY"
+            android:textSize="17sp"
+            android:textStyle="bold"
             android:textColor="#FFFFFF"
-            android:backgroundTint="#C0392B"
-            android:layout_marginTop="20dp" />
+            android:backgroundTint="#E53935"
+            android:layout_marginBottom="32dp"
+            android:padding="12dp" />
     </LinearLayout>
 </ScrollView>

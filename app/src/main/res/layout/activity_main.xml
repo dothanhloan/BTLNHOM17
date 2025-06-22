@@ -3,7 +3,27 @@
     android:id="@+id/main"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <!-- Header App (Custom để can giữa) -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#6200EE"
+        android:elevation="4dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ứng dụng đặt vé phim"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:padding="12dp"
+            android:textStyle="bold" />
+    </androidx.appcompat.widget.Toolbar>
 
     <!-- Phần hiển thị Fragment -->
     <FrameLayout
@@ -17,7 +37,8 @@
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#FFFFFF"
         app:menu="@menu/bottom_nav_menu"
         app:itemIconTint="@color/nav_selector"
-        app:itemTextColor="@color/nav_selector"/>
+        app:itemTextColor="@color/nav_selector" />
 </LinearLayout>
