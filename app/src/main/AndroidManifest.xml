@@ -22,23 +22,17 @@
             </intent-filter>
         </activity>
         <activity android:name=".RegisterActivity" />
-
+        <activity android:name=".MainActivity"/>
         <activity android:name=".DatVeActivity" />
         <activity android:name=".ChonSuatActivity"/>
         <activity android:name=".ChonRapSuatActivity"/>
         <activity android:name=".ChonGheActivity" />
         <activity android:name=".ChonBapNuocActivity"/>
+        <activity android:name=".ThanhToanActivity" />
+
         <activity android:name=".MovieDetailActivity" />
 
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>

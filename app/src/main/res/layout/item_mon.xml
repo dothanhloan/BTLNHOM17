@@ -38,7 +38,7 @@
             android:id="@+id/txtGiaMon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="30000 đ"
+            android:text="Gia"
             android:textSize="14sp"
             android:textColor="#666666"
             android:layout_marginTop="2dp"/>
@@ -54,7 +54,11 @@
                 android:id="@+id/btnTru"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:text="-" />
+                android:text="-"
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:backgroundTint="#FFC107"
+                android:layout_margin="4dp"/>
 
             <TextView
                 android:id="@+id/txtSoLuong"
@@ -69,7 +73,13 @@
                 android:id="@+id/btnCong"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:text="+" />
+                android:text="+"
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:backgroundTint="#FFC107"
+                android:layout_margin="4dp"/>
+
+
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

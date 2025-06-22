@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -26,7 +28,7 @@ public class ChonGheActivity extends AppCompatActivity implements GheAdapter.OnG
         txtGheChon = findViewById(R.id.txtGheChon);
         RecyclerView recyclerGhe = findViewById(R.id.recyclerGhe);
 
-        // Tạo danh sách ghế mẫu
+        // Tạo danh sách ghế A1 - I8
         List<String> danhSachGhe = new ArrayList<>();
         for (char row = 'A'; row <= 'I'; row++) {
             for (int col = 1; col <= 8; col++) {
@@ -36,12 +38,20 @@ public class ChonGheActivity extends AppCompatActivity implements GheAdapter.OnG
 
         recyclerGhe.setLayoutManager(new GridLayoutManager(this, 8));
         recyclerGhe.setAdapter(new GheAdapter(danhSachGhe, this));
+
         Button btnTiep = findViewById(R.id.btnTiep);
         btnTiep.setOnClickListener(v -> {
-            Intent intent = new Intent(ChonGheActivity.this, ChonBapNuocActivity.class);
-            startActivity(intent);
-        });
+            if (gheDaChon.isEmpty()) {
+                Toast.makeText(this, "Vui lòng chọn ít nhất 1 ghế", Toast.LENGTH_SHORT).show();
+            } else {
+                int seatCost = gheDaChon.size() * GIA_VE;
 
+                // Truyền sang ChonBapNuocActivity
+                Intent intent = new Intent(ChonGheActivity.this, ChonBapNuocActivity.class);
+                intent.putExtra("seatCost", seatCost); // ✅ truyền tổng tiền ghế
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -51,6 +61,8 @@ public class ChonGheActivity extends AppCompatActivity implements GheAdapter.OnG
         } else {
             gheDaChon.remove(ghe);
         }
+
+        // Hiển thị danh sách ghế chọn và tiền
         txtGheChon.setText("Ghế chọn: " + gheDaChon.toString().replace("[", "").replace("]", ""));
         txtTongTien.setText("Giá tiền: " + (gheDaChon.size() * GIA_VE) + "đ");
     }

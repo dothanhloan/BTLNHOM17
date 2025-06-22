@@ -13,77 +13,94 @@ public class ChonBapNuocActivity extends AppCompatActivity {
 
     TextView txtTongTien;
     int tongTien = 0;
+    int seatCost = 0;  // ✅ Giá vé ghế được truyền sang
 
-    // Mỗi món gồm: số lượng, giá, TextView hiện số lượng
-    int slBapCaramel = 0;
-    int slPepsi = 0;
-    int giaBap = 30000;
-    int giaPepsi = 20000;
+    // Số lượng và giá từng món
+    int slBapCaramel = 0, slBapPhoMai = 0, slPepsi = 0, slCombo = 0;
+    int giaBap = 80000, giaPhoMai = 75000, giaPepsi = 30000, giaCombo = 115000;
 
-    TextView txtSLBap, txtSLPepsi;
+    // View hiển thị số lượng
+    TextView txtSLBap, txtSLPhoMai, txtSLPepsi, txtSLCombo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chon_bap_nuoc);
 
+        // ✅ Nhận giá ghế từ màn trước
+        seatCost = getIntent().getIntExtra("seatCost", 0);
+
         txtTongTien = findViewById(R.id.txtTongTien);
-        txtSLBap = findViewById(R.id.monBapCaramel).findViewById(R.id.txtSoLuong);
-        txtSLPepsi = findViewById(R.id.monPepsi).findViewById(R.id.txtSoLuong);
 
-        Button btnCongBap = findViewById(R.id.monBapCaramel).findViewById(R.id.btnCong);
-        Button btnTruBap = findViewById(R.id.monBapCaramel).findViewById(R.id.btnTru);
+        // Mapping từng món
+        View viewBapCaramel = findViewById(R.id.monBapCaramel);
+        View viewBapPhoMai = findViewById(R.id.monBapPhoMai);
+        View viewPepsi = findViewById(R.id.monPepsi);
+        View viewCombo = findViewById(R.id.monCombo);
 
-        Button btnCongPepsi = findViewById(R.id.monPepsi).findViewById(R.id.btnCong);
-        Button btnTruPepsi = findViewById(R.id.monPepsi).findViewById(R.id.btnTru);
+        // Gán TextView số lượng
+        txtSLBap = viewBapCaramel.findViewById(R.id.txtSoLuong);
+        txtSLPhoMai = viewBapPhoMai.findViewById(R.id.txtSoLuong);
+        txtSLPepsi = viewPepsi.findViewById(R.id.txtSoLuong);
+        txtSLCombo = viewCombo.findViewById(R.id.txtSoLuong);
 
-        // Bắp caramel
-        btnCongBap.setOnClickListener(v -> {
-            slBapCaramel++;
-            updateUI();
-        });
-        btnTruBap.setOnClickListener(v -> {
-            if (slBapCaramel > 0) slBapCaramel--;
-            updateUI();
-        });
+        // Gán giá món
+        ((TextView) viewBapCaramel.findViewById(R.id.txtGiaMon)).setText(giaBap + "đ");
+        ((TextView) viewBapPhoMai.findViewById(R.id.txtGiaMon)).setText(giaPhoMai + "đ");
+        ((TextView) viewPepsi.findViewById(R.id.txtGiaMon)).setText(giaPepsi + "đ");
+        ((TextView) viewCombo.findViewById(R.id.txtGiaMon)).setText(giaCombo + "đ");
 
-        // Pepsi
-        btnCongPepsi.setOnClickListener(v -> {
-            slPepsi++;
-            updateUI();
-        });
-        btnTruPepsi.setOnClickListener(v -> {
-            if (slPepsi > 0) slPepsi--;
-            updateUI();
-        });
-        ImageView imgBapCaramel = findViewById(R.id.monBapCaramel).findViewById(R.id.imgMon);
-        imgBapCaramel.setImageResource(R.drawable.bap_phomai);
+        // Gán tên món
+        ((TextView) viewBapCaramel.findViewById(R.id.txtTenMon)).setText("Bắp Caramel");
+        ((TextView) viewBapPhoMai.findViewById(R.id.txtTenMon)).setText("Bắp Phô Mai");
+        ((TextView) viewPepsi.findViewById(R.id.txtTenMon)).setText("Nước Pepsi");
+        ((TextView) viewCombo.findViewById(R.id.txtTenMon)).setText("Combo Bắp + Nước");
 
-        ImageView imgBapPhoMai = findViewById(R.id.monBapPhoMai).findViewById(R.id.imgMon);
-        imgBapPhoMai.setImageResource(R.drawable.bap_phomai);
+        // Gán ảnh
+        ((ImageView) viewBapCaramel.findViewById(R.id.imgMon)).setImageResource(R.drawable.bap);
+        ((ImageView) viewBapPhoMai.findViewById(R.id.imgMon)).setImageResource(R.drawable.bap);
+        ((ImageView) viewPepsi.findViewById(R.id.imgMon)).setImageResource(R.drawable.nuoc);
+        ((ImageView) viewCombo.findViewById(R.id.imgMon)).setImageResource(R.drawable.combo);
 
-        ImageView imgPepsi = findViewById(R.id.monPepsi).findViewById(R.id.imgMon);
-        imgPepsi.setImageResource(R.drawable.pepsi);
+        // Xử lý nút + -
+        viewBapCaramel.findViewById(R.id.btnCong).setOnClickListener(v -> { slBapCaramel++; updateUI(); });
+        viewBapCaramel.findViewById(R.id.btnTru).setOnClickListener(v -> { if (slBapCaramel > 0) slBapCaramel--; updateUI(); });
 
-        ImageView imgCombo = findViewById(R.id.monCombo).findViewById(R.id.imgMon);
-        imgCombo.setImageResource(R.drawable.combo);
+        viewBapPhoMai.findViewById(R.id.btnCong).setOnClickListener(v -> { slBapPhoMai++; updateUI(); });
+        viewBapPhoMai.findViewById(R.id.btnTru).setOnClickListener(v -> { if (slBapPhoMai > 0) slBapPhoMai--; updateUI(); });
+
+        viewPepsi.findViewById(R.id.btnCong).setOnClickListener(v -> { slPepsi++; updateUI(); });
+        viewPepsi.findViewById(R.id.btnTru).setOnClickListener(v -> { if (slPepsi > 0) slPepsi--; updateUI(); });
+
+        viewCombo.findViewById(R.id.btnCong).setOnClickListener(v -> { slCombo++; updateUI(); });
+        viewCombo.findViewById(R.id.btnTru).setOnClickListener(v -> { if (slCombo > 0) slCombo--; updateUI(); });
+
+        // Nút Hoàn Thành → chuyển sang ThanhToanActivity
         Button btnHoanThanh = findViewById(R.id.btnHoanThanh);
         btnHoanThanh.setOnClickListener(v -> {
-            // Quay về màn hình chính (MainActivity hoặc trang home bạn muốn)
-            finish(); // Nếu gọi từ Home thì chỉ cần finish()
-
-            // Hoặc nếu cần chuyển rõ ràng:
-            Intent intent = new Intent(ChonBapNuocActivity.this, MainActivity.class);
+            // Tính tổng tiền toàn bộ (ghế + đồ ăn)
+            int total = tongTien + seatCost;
+            Intent intent = new Intent(ChonBapNuocActivity.this, ThanhToanActivity.class);
+            intent.putExtra("tongTien", total);
+            intent.putExtra("seatCost", seatCost);
             startActivity(intent);
         });
+
         updateUI();
     }
 
     private void updateUI() {
         txtSLBap.setText(String.valueOf(slBapCaramel));
+        txtSLPhoMai.setText(String.valueOf(slBapPhoMai));
         txtSLPepsi.setText(String.valueOf(slPepsi));
+        txtSLCombo.setText(String.valueOf(slCombo));
 
-        tongTien = (slBapCaramel * giaBap) + (slPepsi * giaPepsi);
-        txtTongTien.setText("Tổng tiền: " + tongTien + "đ");
+        // Tính tiền đồ ăn (chưa tính tiền ghế)
+        tongTien = (slBapCaramel * giaBap) +
+                (slBapPhoMai * giaPhoMai) +
+                (slPepsi * giaPepsi) +
+                (slCombo * giaCombo);
+
+        txtTongTien.setText("Tổng tiền: " + (tongTien + seatCost) + "đ");
     }
 }
