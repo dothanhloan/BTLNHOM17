@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="12dp"
+    android:background="#FFFFFF"
+    android:layout_marginBottom="8dp">
+
+    <!-- Poster phim -->
+    <ImageView
+        android:id="@+id/imgPoster"
+        android:layout_width="100dp"
+        android:layout_height="140dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/phim_thamtukien" />
+
+    <!-- Thông tin -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:paddingStart="12dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/txtTenPhim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tên phim"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/txtTheLoai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thể loại"
+            android:textSize="14sp"
+            android:textColor="#666666"
+            android:layout_marginTop="4dp" />
+
+        <Button
+            android:id="@+id/btnDatVe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đặt vé"
+            android:layout_marginTop="8dp"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#FF9800"/>
+    </LinearLayout>
+</LinearLayout>

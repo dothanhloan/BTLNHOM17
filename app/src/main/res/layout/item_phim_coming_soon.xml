@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:background="#FFFFFF"
+    android:layout_marginBottom="8dp">
+
+    <!-- Ảnh poster -->
+    <ImageView
+        android:id="@+id/imgPoster"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/phim_thamtukien" />
+
+    <!-- Tên phim -->
+    <TextView
+        android:id="@+id/txtTenPhim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tên phim sắp chiếu"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp"
+        android:textColor="#000"/>
+
+    <!-- Ngày khởi chiếu -->
+    <TextView
+        android:id="@+id/txtNgayKhoiChieu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ngày chiếu: dd/MM/yyyy"
+        android:textSize="14sp"
+        android:textColor="#666"
+        android:layout_marginTop="4dp"/>
+
+    <!-- Nút Xem thông tin -->
+    <Button
+        android:id="@+id/btnXem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Xem"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/orange"
+        android:textColor="@android:color/white"/>
+</LinearLayout>

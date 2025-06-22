@@ -1,15 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/menu_home"
-        android:icon="@drawable/ic_home"
-        android:title="Trang chủ" />
+        android:id="@+id/menu_showing"
+        android:title="Đang chiếu"/>
     <item
-        android:id="@+id/menu_movies"
-        android:icon="@drawable/ic_movie"
-        android:title="Phim" />
-    <item
-        android:id="@+id/menu_account"
-        android:icon="@drawable/ic_user"
-        android:title="Tài khoản" />
+        android:id="@+id/menu_coming_soon"
+        android:title="Sắp chiếu"/>
 </menu>
