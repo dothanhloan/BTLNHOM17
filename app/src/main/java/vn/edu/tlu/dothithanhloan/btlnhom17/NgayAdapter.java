@@ -1,6 +1,5 @@
 package vn.edu.tlu.dothithanhloan.btlnhom17;
 
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,22 +13,45 @@ import java.util.List;
 public class NgayAdapter extends RecyclerView.Adapter<NgayAdapter.NgayViewHolder> {
 
     private List<String> ngayList;
+    private OnNgayClickListener listener;
+    private int selectedPosition = -1;
 
-    public NgayAdapter(List<String> ngayList) {
+    public interface OnNgayClickListener {
+        void onNgayClick(String ngay);
+    }
+
+    public NgayAdapter(List<String> ngayList, OnNgayClickListener listener) {
         this.ngayList = ngayList;
+        this.listener = listener;
     }
 
     @NonNull
     @Override
     public NgayViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
-        View view = LayoutInflater.from(parent.getContext()).inflate(android.R.layout.simple_list_item_1, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_ngay, parent, false);
         return new NgayViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull NgayViewHolder holder, int position) {
-        holder.txtNgay.setText(ngayList.get(position));
+        String ngay = ngayList.get(position);
+        holder.txtThu.setText("T" + ((position % 7) + 2)); // T2 -> CN
+        holder.txtNgay.setText(ngay);
+
+        // Highlight ngày đang chọn
+        if (position == selectedPosition) {
+            holder.itemView.setBackgroundResource(R.drawable.bg_ngay_selected);
+        } else {
+            holder.itemView.setBackgroundResource(R.drawable.bg_ngay_unselected);
+        }
+
+        holder.itemView.setOnClickListener(v -> {
+            selectedPosition = position;
+            notifyDataSetChanged(); // cập nhật lại giao diện
+            if (listener != null) {
+                listener.onNgayClick(ngay);
+            }
+        });
     }
 
     @Override
@@ -38,11 +60,12 @@ public class NgayAdapter extends RecyclerView.Adapter<NgayAdapter.NgayViewHolder
     }
 
     public static class NgayViewHolder extends RecyclerView.ViewHolder {
-        TextView txtNgay;
+        TextView txtThu, txtNgay;
 
         public NgayViewHolder(@NonNull View itemView) {
             super(itemView);
-            txtNgay = itemView.findViewById(android.R.id.text1);
+            txtThu = itemView.findViewById(R.id.txtThu);
+            txtNgay = itemView.findViewById(R.id.txtNgay);
         }
     }
 }

@@ -1,29 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="60dp"
+    android:id="@+id/itemNgay"
+    android:layout_width="wrap_content"
     android:layout_height="60dp"
     android:orientation="vertical"
     android:gravity="center"
-    android:layout_marginEnd="8dp"
+    android:background="@drawable/bg_ngay_unselected"
+    android:layout_marginEnd="6dp"
     android:padding="4dp"
-    android:background="@drawable/bg_ngay_unselected">
+    android:clickable="true"
+    android:focusable="true">
 
-    <!-- Thứ trong tuần (ví dụ: Tue, Wed) -->
     <TextView
         android:id="@+id/txtThu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tue"
-        android:textColor="#616161"
-        android:textSize="14sp" />
+        android:text="T6"
+        android:textColor="#333333"
+        android:textSize="13sp" />
 
-    <!-- Ngày trong tháng (ví dụ: 25) -->
     <TextView
         android:id="@+id/txtNgay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="25"
+        android:text="28"
         android:textColor="#000000"
         android:textStyle="bold"
-        android:textSize="18sp" />
+        android:textSize="16sp" />
 </LinearLayout>
