@@ -18,6 +18,8 @@ public class Room {
     public String getRoomNumber() { return roomNumber; }
     public void setRoomNumber(String roomNumber) { this.roomNumber = roomNumber; }
 
+
+
     @Override
     public String toString() {
         return roomNumber; // Useful for Spinner/Dropdown

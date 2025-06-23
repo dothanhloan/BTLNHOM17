@@ -32,6 +32,7 @@ public class AddEditScreeningActivity extends AppCompatActivity {
     private Spinner spinnerScreeningMovie, spinnerScreeningRoom;
     private Button btnPickDate, btnPickTime, btnSaveScreening;
 
+
     private DatabaseHelper db;
     private int screeningId = -1; // -1 nếu là thêm mới, ID lịch chiếu nếu là sửa
 

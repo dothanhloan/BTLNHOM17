@@ -99,6 +99,7 @@ public class ManageRoomsActivity extends AppCompatActivity implements RoomAdapte
         }
     }
 
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -108,6 +109,8 @@ public class ManageRoomsActivity extends AppCompatActivity implements RoomAdapte
             }
         }
     }
+
+
 
     @Override
     protected void onResume() {

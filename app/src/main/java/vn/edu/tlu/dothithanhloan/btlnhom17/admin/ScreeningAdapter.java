@@ -59,6 +59,10 @@ public class ScreeningAdapter extends RecyclerView.Adapter<ScreeningAdapter.Scre
         });
     }
 
+
+
+
+
     @Override
     public int getItemCount() {
         return screeningList.size();

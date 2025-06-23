@@ -87,3 +87,4 @@ public class ChonRapSuatActivity extends AppCompatActivity {
         layoutDeXuat.addView(view);
     }
 }
+
