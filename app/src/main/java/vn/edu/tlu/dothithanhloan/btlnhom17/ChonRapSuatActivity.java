@@ -20,7 +20,6 @@ public class ChonRapSuatActivity extends AppCompatActivity {
 
     RecyclerView recyclerNgay, recyclerRap;
     LinearLayout layoutDeXuat;
-    String ngayChon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,9 +38,7 @@ public class ChonRapSuatActivity extends AppCompatActivity {
             // Xử lý khi chọn ngày
             // Ví dụ: hiện toast hoặc lọc danh sách rạp tương ứng
             // Toast.makeText(this, "Chọn ngày: " + selectedNgay, Toast.LENGTH_SHORT).show();
-            ngayChon = selectedNgay;
         }));
-
 
 
         // Danh sách rạp
@@ -76,7 +73,7 @@ public class ChonRapSuatActivity extends AppCompatActivity {
             intent.putExtra("suat", gioChieu);
             intent.putExtra("giaVe", rap.getGiaVe());
             intent.putExtra("tenPhim", getIntent().getStringExtra("tenPhim"));
-            intent.putExtra("ngay", ngayChon);
+            intent.putExtra("ngay", getIntent().getStringExtra("ngayChieu"));
             startActivity(intent);
         };
 
