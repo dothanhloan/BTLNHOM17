@@ -109,6 +109,9 @@ public class ManageScreeningsActivity extends AppCompatActivity implements Scree
         }
     }
 
+
+
+
     @Override
     protected void onResume() {
         super.onResume();

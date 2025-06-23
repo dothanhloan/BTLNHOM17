@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".admin.ManageScreeningsActivity">
 
+
+
     <TextView
         android:id="@+id/tvManageScreeningsTitle"
         android:layout_width="match_parent"
