@@ -12,27 +12,56 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BTLNHOM17"
         tools:targetApi="31">
+
         <activity
             android:name=".LoginActivity"
-            android:exported="true">  <!-- ✅ BẮT BUỘC khi có intent-filter -->
-
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".MainActivity"/>
-        <activity android:name=".DatVeActivity" />
-        <activity android:name=".ChonSuatActivity"/>
-        <activity android:name=".ChonRapSuatActivity"/>
-        <activity android:name=".ChonGheActivity" />
-        <activity android:name=".ChonBapNuocActivity"/>
-        <activity android:name=".ThanhToanActivity" />
-
-        <activity android:name=".MovieDetailActivity" />
-        <activity android:name=".VeCuaToiActivity"/>
-
+        <activity android:name=".RegisterActivity" android:exported="false"/> <activity android:name=".MainActivity" android:exported="false"/>
+        <activity android:name=".DatVeActivity" android:exported="false"/>
+        <activity android:name=".ChonSuatActivity" android:exported="false"/>
+        <activity android:name=".ChonRapSuatActivity" android:exported="false"/>
+        <activity android:name=".ChonGheActivity" android:exported="false"/>
+        <activity android:name=".ChonBapNuocActivity" android:exported="false"/>
+        <activity android:name=".ThanhToanActivity" android:exported="false"/>
+        <activity android:name=".MovieDetailActivity" android:exported="false"/>
+        <activity android:name=".VeCuaToiActivity" android:exported="false"/> <activity
+        android:name=".admin.AdminDashboardActivity"
+        android:exported="false" />
+        <activity
+            android:name=".admin.ManageMoviesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.AddEditMovieActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.ManageCategoriesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.AddEditCategoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.ManageServicesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.AddEditServiceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.ManageRoomsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.AddEditRoomActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.ManageScreeningsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.AddEditScreeningActivity"
+            android:exported="false" />
 
     </application>
 

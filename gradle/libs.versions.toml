@@ -1,5 +1,5 @@
 [versions]
-agp = "8.10.1"
+agp = "8.9.2" # Đảm bảo đã là 8.9.2
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
@@ -19,4 +19,5 @@ constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayo
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
-
+# Nếu bạn có dùng com.android.library (cho module thư viện), cũng cần có dòng tương tự:
+# android-library = { id = "com.android.library", version.ref = "agp" }
