@@ -18,12 +18,20 @@ public class ChonGheActivity extends AppCompatActivity implements GheAdapter.OnG
     TextView txtTongTien, txtGheChon;
     List<String> gheDaChon = new ArrayList<>();
     int GIA_VE;
+
+    String tenPhim, rap, ngay, gio;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        GIA_VE = getIntent().getIntExtra("giaVe", 80000); // Lấy từ Intent, mặc định 80k nếu không có
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chon_ghe);
+
+        // Lấy giá vé và thông tin phim từ Intent
+        GIA_VE = getIntent().getIntExtra("giaVe", 80000);
+        tenPhim = getIntent().getStringExtra("tenPhim");
+        rap     = getIntent().getStringExtra("rap");
+        gio     = getIntent().getStringExtra("suat");
+        ngay    = getIntent().getStringExtra("ngay");
 
         txtTongTien = findViewById(R.id.txtTongTien);
         txtGheChon = findViewById(R.id.txtGheChon);
@@ -46,14 +54,21 @@ public class ChonGheActivity extends AppCompatActivity implements GheAdapter.OnG
                 Toast.makeText(this, "Vui lòng chọn ít nhất 1 ghế", Toast.LENGTH_SHORT).show();
             } else {
                 int seatCost = gheDaChon.size() * GIA_VE;
+                String gheStr = gheDaChon.toString().replace("[", "").replace("]", "");
 
-                // Truyền sang ChonBapNuocActivity
+                // Gửi dữ liệu sang ChonBapNuocActivity
                 Intent intent = new Intent(ChonGheActivity.this, ChonBapNuocActivity.class);
-                intent.putExtra("seatCost", seatCost); // ✅ truyền tổng tiền ghế
+
+                // ✅ Truyền tất cả thông tin cần thiết
+                intent.putExtra("tenPhim", getIntent().getStringExtra("tenPhim"));
+                intent.putExtra("ngay", getIntent().getStringExtra("ngay"));
+                intent.putExtra("gio", getIntent().getStringExtra("suat")); // giờ chiếu = suất
                 intent.putExtra("rap", getIntent().getStringExtra("rap"));
-                intent.putExtra("suat", getIntent().getStringExtra("suat"));
+                intent.putExtra("ghe", gheDaChon.toString().replace("[", "").replace("]", ""));
+                intent.putExtra("seatCost", seatCost);
 
                 startActivity(intent);
+
             }
         });
     }

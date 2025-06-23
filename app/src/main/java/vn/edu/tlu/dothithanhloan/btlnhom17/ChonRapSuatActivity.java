@@ -72,6 +72,8 @@ public class ChonRapSuatActivity extends AppCompatActivity {
             intent.putExtra("rap", rap.getTen());
             intent.putExtra("suat", gioChieu);
             intent.putExtra("giaVe", rap.getGiaVe());
+            intent.putExtra("tenPhim", getIntent().getStringExtra("tenPhim"));
+            intent.putExtra("ngay", getIntent().getStringExtra("ngayChieu"));
             startActivity(intent);
         };
 

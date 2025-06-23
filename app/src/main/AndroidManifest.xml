@@ -31,6 +31,7 @@
         <activity android:name=".ThanhToanActivity" />
 
         <activity android:name=".MovieDetailActivity" />
+        <activity android:name=".VeCuaToiActivity"/>
 
 
     </application>
