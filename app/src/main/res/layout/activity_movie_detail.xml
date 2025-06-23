@@ -87,16 +87,6 @@
         </androidx.cardview.widget.CardView>
 
         <!-- Nút đặt vé -->
-        <Button
-            android:id="@+id/btnDatVe"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="🎟 ĐẶT VÉ NGAY"
-            android:textSize="17sp"
-            android:textStyle="bold"
-            android:textColor="#FFFFFF"
-            android:backgroundTint="#E53935"
-            android:layout_marginBottom="32dp"
-            android:padding="12dp" />
+
     </LinearLayout>
 </ScrollView>

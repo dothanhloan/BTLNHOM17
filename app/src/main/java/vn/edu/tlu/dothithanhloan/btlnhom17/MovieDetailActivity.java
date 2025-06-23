@@ -62,9 +62,9 @@ public class MovieDetailActivity extends AppCompatActivity {
         txtMoTaPhim.setText(moTa);
 
         // Nút đặt vé
-        btnDatVe.setOnClickListener(v -> {
-            Intent i = new Intent(this, ChonRapSuatActivity.class);
-            startActivity(i);
-        });
+        //btnDatVe.setOnClickListener(v -> {
+            //Intent i = new Intent(this, ChonRapSuatActivity.class);
+            //startActivity(i);
+        //});
     }
 }

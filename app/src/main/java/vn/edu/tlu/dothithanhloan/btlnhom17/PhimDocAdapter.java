@@ -19,7 +19,6 @@ public class PhimDocAdapter extends RecyclerView.Adapter<PhimDocAdapter.PhimView
     private Context context;
     private List<Phim> phimList;
 
-    // Constructor truyền context để sử dụng Intent
     public PhimDocAdapter(Context context, List<Phim> phimList) {
         this.context = context;
         this.phimList = phimList;
@@ -39,16 +38,21 @@ public class PhimDocAdapter extends RecyclerView.Adapter<PhimDocAdapter.PhimView
         holder.imgPoster.setImageResource(phim.posterResId);
         holder.txtTenPhim.setText(phim.tenPhim);
         holder.txtThongTin.setText("Thời lượng: " + phim.thoiLuong + " phút\nKhởi chiếu: " + phim.ngayKhoiChieu + "\nThể loại: " + phim.theLoai);
-        holder.btnDatVe.setText("Đặt vé");
 
-        // ✅ Xử lý nút "Đặt vé"
+        // Nút "Đặt vé"
         holder.btnDatVe.setOnClickListener(v -> {
-            Intent intent = new Intent(context,ChonRapSuatActivity.class);
+            Intent intent = new Intent(context, ChonRapSuatActivity.class);
             intent.putExtra("tenPhim", phim.tenPhim);
             intent.putExtra("ngayChieu", phim.ngayKhoiChieu);
             context.startActivity(intent);
         });
 
+        // Nút "Xem chi tiết"
+        holder.btnChiTiet.setOnClickListener(v -> {
+            Intent intent = new Intent(context, MovieDetailActivity.class);
+            intent.putExtra("tenPhim", phim.tenPhim);
+            context.startActivity(intent);
+        });
     }
 
     @Override
@@ -59,14 +63,15 @@ public class PhimDocAdapter extends RecyclerView.Adapter<PhimDocAdapter.PhimView
     public static class PhimViewHolder extends RecyclerView.ViewHolder {
         ImageView imgPoster;
         TextView txtTenPhim, txtThongTin;
-        Button btnDatVe;
+        Button btnDatVe, btnChiTiet; // ✅ Thêm btnChiTiet ở đây
 
         public PhimViewHolder(@NonNull View itemView) {
             super(itemView);
-            imgPoster = itemView.findViewById(R.id.imgPoster);
-            txtTenPhim = itemView.findViewById(R.id.txtTenPhim);
-            txtThongTin = itemView.findViewById(R.id.txtThongTin);
-            btnDatVe = itemView.findViewById(R.id.btnDatVe);
+            imgPoster    = itemView.findViewById(R.id.imgPoster);
+            txtTenPhim   = itemView.findViewById(R.id.txtTenPhim);
+            txtThongTin  = itemView.findViewById(R.id.txtThongTin);
+            btnDatVe     = itemView.findViewById(R.id.btnDatVe);
+            btnChiTiet   = itemView.findViewById(R.id.btnChiTiet); // ✅ Gán nút
         }
     }
 }

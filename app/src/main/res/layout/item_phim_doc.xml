@@ -50,5 +50,13 @@
             android:layout_marginTop="8dp"
             android:textColor="#FFFFFF"
             android:backgroundTint="#FF9800"/>
+        <Button
+            android:id="@+id/btnChiTiet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Xem chi tiết"
+            android:layout_marginStart="12dp"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#FF9800"/>
     </LinearLayout>
 </LinearLayout>
