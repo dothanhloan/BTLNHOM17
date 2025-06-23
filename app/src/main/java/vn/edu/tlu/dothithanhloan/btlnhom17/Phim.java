@@ -7,7 +7,7 @@ public class Phim {
     public String ngayKhoiChieu;
     public String theLoai;
     public String moTa; // nếu có thêm mô tả
-
+    public String videoId;
     public Phim(int posterResId, String tenPhim, String thoiLuong, String ngayKhoiChieu, String theLoai) {
         this.posterResId = posterResId;
         this.tenPhim = tenPhim;
@@ -15,6 +15,7 @@ public class Phim {
         this.ngayKhoiChieu = ngayKhoiChieu;
         this.theLoai = theLoai;
         this.moTa = null; // hoặc gán giá trị mặc định
+        this.videoId = videoId;
     }
 
     // --- Getter ---

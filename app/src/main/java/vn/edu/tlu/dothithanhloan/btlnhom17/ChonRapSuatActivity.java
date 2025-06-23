@@ -59,7 +59,7 @@ public class ChonRapSuatActivity extends AppCompatActivity {
         txtTen.setText(rap.getTen());
 
         TextView txtSuat = view.findViewById(R.id.txtSuatChieu);
-        txtSuat.setText("10:00   13:00   18:30   21:45");
+        txtSuat.setText("10:00   13:00   18:30   ");
 
         // Gán sự kiện cho các Button suất
         Button btnSuat1 = view.findViewById(R.id.btnSuat1);

@@ -51,8 +51,15 @@ public class PhimDocAdapter extends RecyclerView.Adapter<PhimDocAdapter.PhimView
         holder.btnChiTiet.setOnClickListener(v -> {
             Intent intent = new Intent(context, MovieDetailActivity.class);
             intent.putExtra("tenPhim", phim.tenPhim);
+            intent.putExtra("thoiLuong", phim.thoiLuong);
+            intent.putExtra("theLoai", phim.theLoai);
+            intent.putExtra("ngayKhoiChieu", phim.ngayKhoiChieu);
+            intent.putExtra("coDatVe", true); // ✅ Cho đặt vé
+
+            intent.putExtra("posterResId", phim.posterResId); // nếu muốn hiển thị ảnh
             context.startActivity(intent);
         });
+
     }
 
     @Override

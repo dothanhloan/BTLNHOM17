@@ -52,11 +52,13 @@ public class ComingSoonAdapter extends RecyclerView.Adapter<ComingSoonAdapter.Vi
                 // Nếu không truyền listener thì mở MovieDetailActivity trực tiếp
                 Intent intent = new Intent(context, MovieDetailActivity.class);
                 intent.putExtra("tenPhim", phim.getTen());
-                intent.putExtra("thongTin", "Thời lượng: " + phim.getThoiLuong()
+                intent.putExtra("thoiLuong", "Thời lượng: " + phim.getThoiLuong()
                         + "\nKhởi chiếu: " + phim.getKhoiChieu()
                         + "\nThể loại: " + phim.getTheLoai());
                 intent.putExtra("moTa", phim.getMoTa() != null ? phim.getMoTa() : "Chưa có mô tả.");
-                intent.putExtra("poster", phim.getHinhAnh());
+                intent.putExtra("posterResId", phim.getHinhAnh());
+                intent.putExtra("theLoai", phim.getTheLoai());
+                intent.putExtra("ngayKhoiChieu", phim.getKhoiChieu());
                 context.startActivity(intent);
             }
         });

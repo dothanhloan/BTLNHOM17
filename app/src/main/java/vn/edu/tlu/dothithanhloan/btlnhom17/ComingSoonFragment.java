@@ -31,13 +31,16 @@ public class ComingSoonFragment extends Fragment {
         rv.setAdapter(new ComingSoonAdapter(getContext(), list, phim -> {
             Intent intent = new Intent(getContext(), MovieDetailActivity.class);
             intent.putExtra("tenPhim", phim.getTen());
-            intent.putExtra("thongTin", "Thời lượng: " + phim.getThoiLuong()
-                    + "\nKhởi chiếu: " + phim.getKhoiChieu()
-                    + "\nThể loại: " + phim.getTheLoai());
+            intent.putExtra("thoiLuong", phim.getThoiLuong());
+            intent.putExtra("theLoai", phim.getTheLoai());
+            intent.putExtra("ngayKhoiChieu", phim.getKhoiChieu());
             intent.putExtra("moTa", phim.getMoTa() != null ? phim.getMoTa() : "Chưa có mô tả.");
-            intent.putExtra("poster", phim.getHinhAnh());
+            intent.putExtra("posterResId", phim.getHinhAnh());
+            intent.putExtra("coDatVe", false);
+//            intent.putExtra("videoId", phim.getVideoId()); // nếu có
             startActivity(intent);
         }));
+
 
         return v;
     }

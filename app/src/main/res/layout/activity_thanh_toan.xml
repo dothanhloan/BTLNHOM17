@@ -32,19 +32,8 @@
             android:layout_height="wrap_content" />
 
         <!-- THÔNG TIN PHIM -->
-        <TextView
-            android:text="THÔNG TIN PHIM"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            android:layout_marginBottom="12dp"
-            android:textColor="#444444"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
 
-        <!-- Các dòng thông tin phim -->
-        <TextView android:text="Tên phim: BÍ KÍP LUYỆN RỒNG (K)"
-            style="@style/TextRow" />
-        <!-- ... các TextView style TextRow khác ... -->
+
 
         <!-- THÔNG TIN NHẬN VÉ -->
         <TextView
@@ -58,7 +47,7 @@
             android:layout_height="wrap_content" />
 
         <TextView
-            android:text="Thông tin vé sẽ được gửi tới email hoặc hiển thị trong ứng dụng."
+            android:text="Thông tin vé sẽ được gửi tới email "
             android:textSize="14sp"
             android:textColor="#555555"
             android:layout_marginBottom="12dp"
